@@ -1,0 +1,308 @@
+/* RESET BÁSICO E FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* VARIÁVEIS DE COR */
+:root {
+    --azul-principal: #0a74da; /* Azul forte e moderno */
+    --azul-secundario: #0759a7;
+    --branco: #ffffff;
+    --cinza-claro: #f4f4f4;
+    --texto-escuro: #333;
+}
+
+body {
+    color: var(--texto-escuro);
+}
+
+/* CABEÇALHO E NAVEGAÇÃO */
+header {
+    background-color: var(--branco);
+    padding: 1rem 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--azul-principal);
+    text-decoration: none;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: var(--texto-escuro);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+    color: var(--azul-principal);
+}
+
+/* ESTILOS GERAIS DE SEÇÃO */
+section {
+    padding: 6rem 5% 4rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--azul-principal);
+}
+
+.section-description {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* SEÇÃO INÍCIO (HERO) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens/felipe-barros-destaque.jpg') no-repeat center center/cover;
+    color: var(--branco);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem;
+}
+
+.cta-button {
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--azul-secundario);
+}
+
+/* SEÇÃO SERVIÇOS */
+#servicos {
+    background-color: var(--cinza-claro);
+}
+
+.planos-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.plano {
+    background-color: var(--branco);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.plano:hover {
+    transform: translateY(-10px);
+}
+
+.plano.destaque {
+    border: 2px solid var(--azul-principal);
+    transform: scale(1.05);
+}
+
+.plano h3 {
+    font-size: 1.5rem;
+    color: var(--azul-principal);
+    margin-bottom: 1rem;
+}
+
+.plano .preco {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.plano ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.plano ul li {
+    margin-bottom: 0.8rem;
+}
+
+.plano ul li .fa-check {
+    color: var(--azul-principal);
+    margin-right: 0.5rem;
+}
+
+.servico-presencial {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: var(--branco);
+    border-radius: 10px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button-secundario {
+    background-color: transparent;
+    border: 2px solid var(--azul-principal);
+    color: var(--azul-principal);
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.cta-button-secundario:hover {
+    background-color: var(--azul-principal);
+    color: var(--branco);
+}
+
+
+/* SEÇÃO ALUNOS */
+.alunos-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.aluno-card {
+    background-color: var(--cinza-claro);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.aluno-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.aluno-card .feedback {
+    padding: 1.5rem;
+}
+
+.aluno-card .feedback p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.aluno-card .feedback h4 {
+    color: var(--azul-principal);
+    font-weight: 700;
+}
+
+/* SEÇÃO CONTATO */
+#contato {
+    background-color: var(--texto-escuro);
+    color: var(--branco);
+}
+
+#contato h2 {
+    color: var(--branco);
+}
+
+#contato .section-description {
+    color: var(--cinza-claro);
+}
+
+.contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contato-links a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--branco);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.contato-links a:hover {
+    background-color: var(--azul-principal);
+    border-color: var(--azul-principal);
+}
+
+.contato-links a i {
+    margin-right: 0.5rem;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #222;
+    color: var(--cinza-claro);
+    text-align: center;
+    padding: 1.5rem 5%;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    nav .nav-links {
+        /* Aqui você pode adicionar um menu hamburguer no futuro com JavaScript */
+        display: none; 
+    }
+
+    .planos-container, .alunos-container, .contato-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
