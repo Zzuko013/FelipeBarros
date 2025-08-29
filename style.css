@@ -40,11 +40,9 @@ nav {
     align-items: center;
 }
 
-nav .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--azul-principal);
-    text-decoration: none;
+nav .logo img {
+    width: 150px;
+    height: auto;
 }
 
 nav .nav-links {
