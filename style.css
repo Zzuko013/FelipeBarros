@@ -1,7 +1,6 @@
 /* RESET BÁSICO E FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,7 +24,7 @@ body {
 /* CABEÇALHO E NAVEGAÇÃO */
 header {
     background-color: var(--branco);
-    padding: 1rem 5%;
+    padding: 1% 8%;
     position: fixed;
     top: 0;
     left: 0;
@@ -81,26 +80,53 @@ h2 {
     line-height: 1.6;
 }
 
-/* SEÇÃO INÍCIO (HERO) */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens/felipe-barros-destaque.jpg') no-repeat center center/cover;
-    color: var(--branco);
+    /* MUDANÇA: Alinha os itens com espaço entre eles */
+    justify-content: space-between; 
+    /* ADIÇÃO: Um espaço caso os itens se aproximem */
+    gap: 0.8rem;
+    /* AJUSTE: Removemos o background daqui pois a imagem não é mais de fundo */
+    color: var(--texto-principal); /* Pode ser necessário ajustar a cor do texto */
+}
+
+/* Coluna de conteúdo do Hero */
+.hero-content {
+    /* ADIÇÃO: Define que esta coluna pode crescer e ocupar espaço */
+    flex: 1; 
+    /* MUDANÇA: Alinha o texto à esquerda */
+    text-align: left;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.0rem;
     font-weight: 700;
+    color: var(--azul-principal); /* Cor do título */
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 1rem 0 2rem;
+    color: #666; /* Cor do parágrafo */
 }
 
+/* Coluna da imagem do Hero */
+.hero-image {
+    /* ADIÇÃO: Também permite que esta coluna ocupe espaço */
+    flex: 1.5;
+    text-align: center; /* Centraliza a imagem dentro da sua coluna */
+}
+
+.hero-image img {
+    /* ADIÇÃO: Garante que a imagem seja responsiva e não estoure seu container */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Opcional: para arredondar as bordas da foto */
+}
+
+/* O estilo do botão continua o mesmo */
 .cta-button {
     background-color: var(--azul-principal);
     color: var(--branco);
@@ -114,7 +140,6 @@ h2 {
 .cta-button:hover {
     background-color: var(--azul-secundario);
 }
-
 /* SEÇÃO SERVIÇOS */
 #servicos {
     background-color: var(--cinza-claro);
@@ -174,12 +199,16 @@ h2 {
 
 .servico-presencial {
     margin-top: 4rem;
-    padding: 4rem;
+    padding: 2rem;
     background-color: var(--branco);
     border-radius: 10px;
-    max-width: 800px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center;   /* Centraliza os itens no eixo cruzado (horizontal) */
+    gap: 1.5rem;           /* Define o espaço ENTRE cada item filho */
 }
 
 .cta-button-secundario {
@@ -217,7 +246,7 @@ h2 {
 
 .aluno-card img {
     width: 100%;
-    height: 250px;
+    height: 400px;
     object-fit: cover;
 }
 
@@ -303,4 +332,91 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+
+    /* =============================================== */
+/* ============== RESPONSIVIDADE ================= */
+/* =============================================== */
+@media (max-width: 768px) {
+
+    /* --- GERAL --- */
+    h2 {
+        font-size: 2rem; /* Diminui o título das seções */
+    }
+    
+    section {
+        padding: 4rem 5% 3rem; /* Diminui o espaçamento das seções */
+    }
+
+    /* --- CABEÇALHO E NAVEGAÇÃO --- */
+    nav {
+        /* O menu de navegação precisa de um botão (hambúrguer) e JavaScript
+           para funcionar em telas pequenas. Por enquanto, a melhor abordagem 
+           é escondê-lo para não quebrar o layout. */
+        justify-content: center; /* Centraliza a logo quando o menu some */
+    }
+
+    nav .logo img {
+        width: 60px; /* Logo um pouco menor */
+    }
+
+    nav .nav-links {
+        display: none; 
+    }
+
+    /* --- SEÇÃO HERO --- */
+    .hero {
+        flex-direction: column; /* Empilha o texto e a imagem verticalmente */
+        text-align: center;      /* Centraliza todo o conteúdo */
+        padding-top: 6rem;       /* Mais espaço no topo por causa do header fixo */
+        min-height: auto;        /* Altura se ajusta ao conteúdo */
+    }
+
+    .hero-content {
+        order: 2; /* O texto ficará abaixo da imagem */
+        text-align: center; /* Garante que o texto fique centralizado */
+    }
+    
+    .hero-image {
+        order: 1; /* A imagem ficará acima do texto */
+        margin-bottom: 2rem; /* Espaço entre a imagem e o título */
+        flex-basis: auto; /* Reseta a base do flex item */
+        width: 80%; /* A imagem não ocupará 100% da largura */
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem; /* Título principal menor para caber na tela */
+    }
+
+    .hero-content p {
+        font-size: 1.1rem; /* Texto de apoio um pouco menor */
+    }
+
+    /* --- SEÇÃO SERVIÇOS E ALUNOS (CARDS) --- */
+    .planos-container, .alunos-container {
+        flex-direction: column; /* Empilha os cards verticalmente */
+        align-items: center;    /* Centraliza os cards empilhados */
+    }
+
+    .plano, .aluno-card {
+        width: 90%; /* Faz os cards ocuparem quase toda a largura */
+        max-width: 340px; /* Limite para não ficar largo demais */
+    }
+
+    .plano.destaque {
+        transform: scale(1); /* Remove o efeito de zoom do plano destaque */
+    }
+
+    /* --- SEÇÃO CONTATO --- */
+    .contato-links {
+        flex-direction: column; /* Empilha os botões de contato */
+        align-items: center;
+        gap: 1.5rem; /* Ajusta o espaço entre os botões */
+    }
+
+    .contato-links a {
+        width: 80%; /* Botões mais largos para facilitar o toque */
+        text-align: center;
+    }
+}
+
 }
