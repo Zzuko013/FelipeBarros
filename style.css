@@ -87,7 +87,7 @@ h2 {
     /* MUDANÇA: Alinha os itens com espaço entre eles */
     justify-content: space-between; 
     /* ADIÇÃO: Um espaço caso os itens se aproximem */
-    gap: 0.8rem;
+    gap: 0.4rem;
     /* AJUSTE: Removemos o background daqui pois a imagem não é mais de fundo */
     color: var(--texto-principal); /* Pode ser necessário ajustar a cor do texto */
 }
