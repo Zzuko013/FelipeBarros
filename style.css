@@ -378,7 +378,7 @@ footer {
     
     .hero-image {
         order: 1; /* A imagem ficará acima do texto */
-        margin-bottom: 2rem; /* Espaço entre a imagem e o título */
+        margin-bottom: 1rem; /* Espaço entre a imagem e o título */
         flex-basis: auto; /* Reseta a base do flex item */
         width: 80%; /* A imagem não ocupará 100% da largura */
     }
