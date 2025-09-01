@@ -101,7 +101,7 @@ h2 {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.0rem;
     font-weight: 700;
     color: var(--azul-principal); /* Cor do título */
 }
